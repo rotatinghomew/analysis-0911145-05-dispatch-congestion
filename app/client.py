@@ -11,4 +11,4 @@ def request(base, route, payload=None):
 
 
 def analysis(base, case='standard', **options):
-    return request(base, '/capacity', {'case': case, **options})
+    return request(base, '/cohort-effects', {'case': case, **options})

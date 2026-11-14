@@ -1,0 +1,185 @@
+{
+  "kind": "cohorts",
+  "as_of_period": 15,
+  "cells": [
+    {
+      "id": "c0a2",
+      "cohort": 0,
+      "age": 2,
+      "period": 2,
+      "grade": "B",
+      "offered": 50,
+      "discounted": 9,
+      "known_at": 3,
+      "heldout": false
+    },
+    {
+      "id": "c0a4",
+      "cohort": 0,
+      "age": 4,
+      "period": 4,
+      "grade": "B",
+      "offered": 60,
+      "discounted": 11,
+      "known_at": 5,
+      "heldout": false
+    },
+    {
+      "id": "c1a2",
+      "cohort": 1,
+      "age": 2,
+      "period": 3,
+      "grade": "A",
+      "offered": 57,
+      "discounted": 10,
+      "known_at": 4,
+      "heldout": false
+    },
+    {
+      "id": "c1a4",
+      "cohort": 1,
+      "age": 4,
+      "period": 5,
+      "grade": "A",
+      "offered": 67,
+      "discounted": 12,
+      "known_at": 6,
+      "heldout": false
+    },
+    {
+      "id": "c2a2",
+      "cohort": 2,
+      "age": 2,
+      "period": 4,
+      "grade": "B",
+      "offered": 64,
+      "discounted": 7,
+      "known_at": 5,
+      "heldout": false
+    },
+    {
+      "id": "c2a4",
+      "cohort": 2,
+      "age": 4,
+      "period": 6,
+      "grade": "B",
+      "offered": 44,
+      "discounted": 13,
+      "known_at": 7,
+      "heldout": false
+    },
+    {
+      "id": "c3a2",
+      "cohort": 3,
+      "age": 2,
+      "period": 5,
+      "grade": "A",
+      "offered": 41,
+      "discounted": 8,
+      "known_at": 6,
+      "heldout": false
+    },
+    {
+      "id": "c3a4",
+      "cohort": 3,
+      "age": 4,
+      "period": 7,
+      "grade": "A",
+      "offered": 51,
+      "discounted": 14,
+      "known_at": 8,
+      "heldout": false
+    },
+    {
+      "id": "c4a2",
+      "cohort": 4,
+      "age": 2,
+      "period": 6,
+      "grade": "B",
+      "offered": 48,
+      "discounted": 9,
+      "known_at": 7,
+      "heldout": false
+    },
+    {
+      "id": "c4a4",
+      "cohort": 4,
+      "age": 4,
+      "period": 8,
+      "grade": "B",
+      "offered": 58,
+      "discounted": 11,
+      "known_at": 9,
+      "heldout": false
+    },
+    {
+      "id": "c5a2",
+      "cohort": 5,
+      "age": 2,
+      "period": 7,
+      "grade": "A",
+      "offered": 55,
+      "discounted": 10,
+      "known_at": 8,
+      "heldout": false
+    },
+    {
+      "id": "c5a4",
+      "cohort": 5,
+      "age": 4,
+      "period": 9,
+      "grade": "A",
+      "offered": 65,
+      "discounted": 12,
+      "known_at": 10,
+      "heldout": false
+    },
+    {
+      "id": "c6a2",
+      "cohort": 6,
+      "age": 2,
+      "period": 8,
+      "grade": "B",
+      "offered": 62,
+      "discounted": 7,
+      "known_at": 9,
+      "heldout": true
+    },
+    {
+      "id": "c6a4",
+      "cohort": 6,
+      "age": 4,
+      "period": 10,
+      "grade": "B",
+      "offered": 42,
+      "discounted": 13,
+      "known_at": 11,
+      "heldout": true
+    },
+    {
+      "id": "c7a2",
+      "cohort": 7,
+      "age": 2,
+      "period": 9,
+      "grade": "A",
+      "offered": 69,
+      "discounted": 8,
+      "known_at": 10,
+      "heldout": true
+    },
+    {
+      "id": "c7a4",
+      "cohort": 7,
+      "age": 4,
+      "period": 11,
+      "grade": "A",
+      "offered": 49,
+      "discounted": 14,
+      "known_at": 12,
+      "heldout": true
+    }
+  ],
+  "age_unit": "week",
+  "origin": "2026-08-03",
+  "external_anchors": []
+}

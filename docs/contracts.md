@@ -1,7 +1,7 @@
 # 产品数据与调用约定
 
-时间单位为班次起点后的分钟。jobs 中 ready 为可作业时间，scans 可缺 start 或 end，绝不能据此假设服务为零。resource_calendar 的 capacity 是半开时间区间内可用人数，loans 从同一资源池调拨，不能两头增加容量。departures 的 released_jobs 是整车共同发运关系，target_units 是放行条件而非实测满载量。POST /capacity {case, scenario?} 返回 {snapshot, fit, validation, scenarios, diagnostics}。fit 说明参数及其辨识范围，validation 使用 holdout_shifts；scenarios 报告积压和时间尾部定义及不确定性，不要求特定随机过程模型。
+cells 的 cohort 是自 origin 起的入库周，age 是库龄周，period 是经营日历周，满足 cohort+age=period；offered 为该等级/时间单元待售箱数，discounted 为其中折价箱数，同一箱在不同时点可再次待售，不能据箱次假设独立果实。known_at 决定 as_of_period 时是否可见。external_anchors 是独立资料给出的代次 log-odds 差异区间，不得当精确真值；heldout 为完整代次留出。新接口 POST /cohort-effects 接收 {case, anchors?}，返回 {snapshot, estimable, constraints, sensitivity, validation, diagnostics}。estimable 中注明对比、估计和不确定性含义；constraints 区分规范化与实质假设；不要求给出唯一三方趋势分摊。
 
-当前 GET /cases、POST /preview 和 GET /health 已可用；client.analysis 是待接入的业务消费调用，新分析路由尚不存在。原始数据通过 app.store 读取，snapshot 为输入字节的 SHA-256。新增接口须保留现有预览能力和 JSON 有限数值约定。
+现有 GET /health、GET /cases 和 POST /preview 保留原有资料预览。新增 GET /study-cases 和 POST /study-preview {case} 已可用，只校验与描述 data/study 的资料；推断消费路由尚未实现。app.client.analysis 指向上文约定的新消费接口。所有 snapshot 都是相应原始资料字节的 SHA-256，输出仅使用有限 JSON 数值，无法判断用明确状态与 null 表达，不得返回 NaN。资料只供本地分析，不连接外部服务。
 
-fit.training_shifts 记录参与校准的班次，validation 是含 shift 字段的记录列表，必须覆盖每个 holdout_shifts。拟合失败也应保留留出记录并标记原因。借调期间可暂停已开始作业，扫描起止是墙钟跨度，不直接等同连续占工时。
+estimable 是可估对比记录列表，constraints 是记录列表且每条含 kind，值为 normalization、external 或 substantive；external 只能引用实际提供的锚点。
