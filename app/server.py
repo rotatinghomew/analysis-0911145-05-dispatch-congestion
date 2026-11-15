@@ -5,6 +5,7 @@ from urllib.parse import urlsplit
 from app.store import load_case, names
 from app.study_store import load_case as load_study, names as study_names
 from app.study import preview as study_preview
+from app.cohort import analyse as cohort_analysis
 from app.yard import preview
 
 
@@ -36,11 +37,16 @@ class Handler(BaseHTTPRequestHandler):
             if not 0 < length <= 1048576:
                 raise ValueError('invalid body size')
             request = json.loads(self.rfile.read(length))
-            if urlsplit(self.path).path == '/study-preview':
+            route = urlsplit(self.path).path
+            if route == '/study-preview':
                 self.send_json(200, study_preview(load_study(request['case'])))
                 return
+            if route == '/cohort-effects':
+                case = load_study(request['case'])
+                self.send_json(200, cohort_analysis(case, request.get('anchors')))
+                return
             case = load_case(request['case'])
-            if urlsplit(self.path).path != '/preview':
+            if route != '/preview':
                 self.send_json(404, {'error': 'unknown route'})
                 return
             self.send_json(200, preview(case))
